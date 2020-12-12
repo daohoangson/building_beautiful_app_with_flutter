@@ -158,6 +158,9 @@ Build your own widget as a composition of widgets.<!-- not extending existing Vi
 </ol>
 <br />
 <br />
+Source code: <a href="https://bit.ly/webuild_flutter">bit.ly/webuild_flutter</a>.<br />
+<br />
+<br />
 Questions?
   ''',
   ),
