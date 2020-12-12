@@ -1,0 +1,3 @@
+[submodule "packages/covid19"]
+	path = packages/covid19
+	url = https://github.com/daohoangson/flutter-covid19.git
