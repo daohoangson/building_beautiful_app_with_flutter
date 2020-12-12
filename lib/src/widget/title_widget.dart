@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class TitleWidget extends StatelessWidget {
   final String data;
@@ -8,18 +9,28 @@ class TitleWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final style = DefaultTextStyle.of(context).style;
+    final fontSize = DefaultTextStyle.of(context).style.fontSize;
 
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Text(
-        data,
-        maxLines: 1,
-        overflow: TextOverflow.ellipsis,
-        style: style?.copyWith(
-          color: theme.accentColor,
-          fontSize: style.fontSize * 2,
-        ),
+    return Container(
+      color: theme.primaryColor,
+      child: Row(
+        children: [
+          Expanded(
+            child: Padding(
+              padding: EdgeInsets.all(fontSize),
+              child: Text(
+                data,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                style: TextStyle(
+                  color: theme.colorScheme.onPrimary,
+                  fontSize: fontSize * 2,
+                ),
+              ),
+            ),
+          ),
+          SvgPicture.asset('images/webuild.svg'),
+        ],
       ),
     );
   }

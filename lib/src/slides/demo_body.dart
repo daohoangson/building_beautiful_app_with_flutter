@@ -1,3 +1,4 @@
+import 'package:building_beautiful_app_with_flutter/src/widget/body_widget.dart';
 import 'package:building_beautiful_app_with_flutter/src/widget/demos/custom_paint_demo.dart';
 import 'package:building_beautiful_app_with_flutter/src/widget/demos/flare_demo.dart';
 import 'package:building_beautiful_app_with_flutter/src/widget/flutter.dart';
@@ -14,9 +15,11 @@ class DemoBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: PhoneFrame(
-        demo,
+    return BodyWidget(
+      Center(
+        child: PhoneFrame(
+          demo,
+        ),
       ),
     );
   }

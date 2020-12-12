@@ -10,7 +10,7 @@ class BodyWidget extends StatelessWidget {
     final style = DefaultTextStyle.of(context).style;
 
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: EdgeInsets.all(style.fontSize),
       child: DefaultTextStyle(
         style: style.copyWith(height: 1.3),
         child: child,

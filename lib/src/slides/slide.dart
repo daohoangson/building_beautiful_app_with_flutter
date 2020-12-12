@@ -3,8 +3,6 @@ import 'package:building_beautiful_app_with_flutter/src/widget/body_widget.dart'
 import 'package:building_beautiful_app_with_flutter/src/widget/flutter.dart';
 import 'package:building_beautiful_app_with_flutter/src/widget/font_size_widget.dart';
 import 'package:building_beautiful_app_with_flutter/src/widget/keyboard_listener_widget.dart';
-import 'package:building_beautiful_app_with_flutter/src/widget/tap_for_next_slide_widget.dart';
-import 'package:building_beautiful_app_with_flutter/src/widget/slide_padding_widget.dart';
 import 'package:building_beautiful_app_with_flutter/src/widget/title_widget.dart';
 import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
 
@@ -78,8 +76,9 @@ class _SlideCustom extends Slide {
   const _SlideCustom(this.title, this.bodyBuilder) : super._();
 
   Widget build(BuildContext context) {
-    return SlidePaddingWidget(
-      [
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
         TitleWidget(title),
         bodyBuilder(),
       ],
@@ -94,8 +93,9 @@ class _SlideText extends Slide {
   const _SlideText(this.title, this.body) : super._();
 
   Widget build(BuildContext _) {
-    return SlidePaddingWidget(
-      [
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
         TitleWidget(title),
         Expanded(
           child: BodyWidget(
@@ -119,20 +119,21 @@ class _SlideTwoColumn extends Slide {
   ) : super._();
 
   Widget build(BuildContext context) {
-    return SlidePaddingWidget(
-      [
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
         TitleWidget(title),
         Expanded(
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Expanded(child: leftBuilder()),
-              Expanded(
-                child: BodyWidget(
-                  HtmlWidget(right),
+          child: BodyWidget(
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Expanded(child: leftBuilder()),
+                Expanded(
+                  child: HtmlWidget(right),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ],

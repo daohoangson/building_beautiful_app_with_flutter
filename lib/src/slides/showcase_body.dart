@@ -1,3 +1,4 @@
+import 'package:building_beautiful_app_with_flutter/src/widget/body_widget.dart';
 import 'package:building_beautiful_app_with_flutter/src/widget/flutter.dart';
 
 class ShowcaseBody extends StatelessWidget {
@@ -73,5 +74,5 @@ class ShowcaseBody extends StatelessWidget {
     );
   }
 
-  static Widget builder() => Expanded(child: ShowcaseBody());
+  static Widget builder() => Expanded(child: BodyWidget(ShowcaseBody()));
 }
